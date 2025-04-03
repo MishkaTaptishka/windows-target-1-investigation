@@ -1,0 +1,40 @@
+MITRE ATT&CK Mapping
+
+Tactic: Initial Access
+Technique: [T1110.001] Brute Force – Password Guessing
+- Numerous failed login attempts against windows-target-1 originated from external IP addresses.
+- Usernames targeted included: administrator, admin, user, test, guest, and variants.
+
+Tactic: Credential Access
+Technique: [T1110] Brute Force
+- High-volume login attempts from IPs such as:
+	REDACTED IP
+	REDACTED IP
+	REDACTED IP
+- These IPs are consistent with known scanning and brute-force behavior.
+
+Tactic: Defense Evasion (Attempted)
+Technique: [T1036] Masquerading
+- Use of alternate username spellings (administrateur, admin1, administrator, admin2) possibly intended to bypass detection or exploit default credentials.
+
+Findings:
+- All successful logons were performed by known users: labuser, labuser1.
+- No unauthorized accounts successfully accessed the system.
+- Multiple external IPs made repeated failed attempts over the 30-day period.
+
+Recommendations:
+- Block Malicious IPs
+- Investigate the most active Remote IPs for prior threat intelligence matches.
+- Temporarily block or geo-fence high-risk IPs.
+- Implement Account Lockout Policy
+- Lock accounts temporarily after repeated failed logins to mitigate brute-force attacks.
+- Enforce Multi-Factor Authentication (MFA)
+- Protect high-value endpoints and admin accounts with MFA.
+- Remove Internet Exposure
+- If external access is not required, ensure windows-target-1 is isolated to internal network only.
+- Enable Logging Alerts
+
+Set up alerts for:
+- Repeated failed logons
+- Remote logons from unfamiliar IPs
+- Authentication from unusual geolocations

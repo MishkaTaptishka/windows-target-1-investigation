@@ -1,0 +1,20 @@
+// generate logs for successful and failed logon attempts
+DeviceLogonEvents
+| where TimeGenerated > ago(30d)
+| where DeviceName == "windows-target-1"
+| where LogonType == "Network"
+//| where ActionType == "LogonSuccessful"	// uncomment to use
+//| where ActionType == "LogonFailed"		// uncomment to use
+| where isnotempty(RemoteIP)
+| project TimeGenerated, DeviceName, ActionType, AccountName, RemoteIP
+| summarize login_count = count() by TimeGenerated, DeviceName, ActionType, AccountName, RemoteIP
+
+// generate logs for most active IPs trying to connect
+DeviceLogonEvents
+| where TimeGenerated > ago(30d)
+| where DeviceName == "windows-target-1"
+| where LogonType == "Network"
+| where ActionType == "LogonFailed"
+| where isnotempty(RemoteIP)
+| project TimeGenerated, DeviceName, ActionType, AccountName, RemoteIP
+| summarize total_connections = count() by RemoteIP, DeviceName, ActionType, AccountName

@@ -1,0 +1,13 @@
+﻿TimeGenerated [UTC],DeviceName,ActionType,AccountName,RemoteIP,login_count
+"3/18/2025, 4:26:28.391 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/18/2025, 4:31:36.548 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/18/2025, 4:36:46.539 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/18/2025, 4:38:00.547 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/18/2025, 4:56:07.488 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/18/2025, 4:57:03.357 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/18/2025, 5:05:51.386 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/21/2025, 2:59:25.608 PM",windows-target-1,LogonSuccess,labuser1,REDACTED IP,1
+"3/8/2025, 5:29:16.096 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/8/2025, 7:15:08.193 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/8/2025, 7:44:36.416 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
+"3/8/2025, 7:45:03.376 AM",windows-target-1,LogonSuccess,labuser,REDACTED IP,1
